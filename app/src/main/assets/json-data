@@ -1,0 +1,32 @@
+{
+  "page": 1,
+  "per_page": 3,
+  "total": 12,
+  "total_pages": 4,
+  "data": [
+    {
+      "id": 1,
+      "email": "george.bluth@reqres.in",
+      "userName": "George",
+      "age": "27",
+      "phoneNum":"01097555350",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+    },
+    {
+      "id": 2,
+      "email": "janet.weaver@reqres.in",
+      "userName": "George",
+      "age": "27",
+      "phoneNum":"01097555350",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+    },
+    {
+      "id": 3,
+      "email": "emma.wong@reqres.in",
+      "userName": "George",
+      "age": "27",
+      "phoneNum":"01097555350",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+    }
+  ]
+}
