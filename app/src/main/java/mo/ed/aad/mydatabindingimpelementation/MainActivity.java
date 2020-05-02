@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import mo.ed.aad.mydatabindingimpelementation.databinding.ActivityMainBinding;
 import mo.ed.aad.mydatabindingimpelementation.fragments.FragmentA;
+import mo.ed.aad.mydatabindingimpelementation.fragments.FragmentB;
+import mo.ed.aad.mydatabindingimpelementation.models.ModelCalc;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG="MainACTIVITY";
 
     ActivityMainBinding activityMainBinding;
 
@@ -32,10 +37,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        inflateFragment();
+        inflateFragmentA();
+        inflateFragmentB();
+
     }
 
-    private void inflateFragment() {
+    private void inflateFragmentB() {
+        FragmentB fragmentB=new FragmentB();
+        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentB_Container,fragmentB,"FragmentB");
+        transaction.commit();
+    }
+
+    private void inflateFragmentA() {
         FragmentA fragmentA=new FragmentA();
         FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentA_Container,fragmentA,"FragmentA");
