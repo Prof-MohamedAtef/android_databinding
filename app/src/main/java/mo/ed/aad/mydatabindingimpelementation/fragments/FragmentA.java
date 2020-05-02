@@ -9,10 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import mo.ed.aad.mydatabindingimpelementation.databinding.FragmentALayoutBinding;
+
 public class FragmentA extends Fragment {
+
+    FragmentALayoutBinding fragmentALayoutBinding;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        fragmentALayoutBinding=FragmentALayoutBinding.inflate(inflater);
+        return fragmentALayoutBinding.getRoot();
     }
 }
