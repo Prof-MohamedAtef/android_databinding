@@ -1,11 +1,13 @@
 package mo.ed.aad.mydatabindingimpelementation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
 
 import mo.ed.aad.mydatabindingimpelementation.databinding.ActivityMainBinding;
+import mo.ed.aad.mydatabindingimpelementation.fragments.FragmentA;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        inflateFragment();
+    }
 
-
+    private void inflateFragment() {
+        FragmentA fragmentA=new FragmentA();
+        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentA_Container,fragmentA,"FragmentA");
+        transaction.commit();
     }
 }
