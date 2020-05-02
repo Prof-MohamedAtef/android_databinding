@@ -1,16 +1,15 @@
 package mo.ed.aad.mydatabindingimpelementation.androidWave.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
-
 import androidx.databinding.BindingAdapter;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.annotations.SerializedName;
-
 import mo.ed.aad.mydatabindingimpelementation.R;
 
-public class Contact {
+public class Contact implements Parcelable {
 
     @SerializedName("id")
     private String ID;
@@ -30,6 +29,27 @@ public class Contact {
 
     @SerializedName("avatar")
     private String Avatar;
+
+    protected Contact(Parcel in) {
+        ID = in.readString();
+        Email = in.readString();
+        UserName = in.readString();
+        Age = in.readString();
+        PhoneNum = in.readString();
+        Avatar = in.readString();
+    }
+
+    public static final Creator<Contact> CREATOR = new Creator<Contact>() {
+        @Override
+        public Contact createFromParcel(Parcel in) {
+            return new Contact(in);
+        }
+
+        @Override
+        public Contact[] newArray(int size) {
+            return new Contact[size];
+        }
+    };
 
     public String getID() {
         return ID;
@@ -88,5 +108,19 @@ public class Contact {
                 .load(imageURL)
                 .placeholder(R.drawable.ic_cloud_loading)
                 .into(imageView);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(Email);
+        dest.writeString(UserName);
+        dest.writeString(PhoneNum);
+        dest.writeString(Avatar);
+        dest.writeString(Age);
     }
 }

@@ -6,11 +6,16 @@
         <variable
             name="contact"
             type="mo.ed.aad.mydatabindingimpelementation.androidWave.model.Contact" />
+        
+        <variable
+            name="iRecyclerActivity"
+            type="mo.ed.aad.mydatabindingimpelementation.IRecyclerActivity" />
     </data>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="@{() -> iRecyclerActivity.inflateContactFragment(contact)}">
 
             <LinearLayout
                 android:id="@+id/Linear_AllPostDetails"

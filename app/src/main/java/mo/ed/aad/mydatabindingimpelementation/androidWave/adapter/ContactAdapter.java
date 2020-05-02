@@ -1,14 +1,13 @@
 package mo.ed.aad.mydatabindingimpelementation.androidWave.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
+import mo.ed.aad.mydatabindingimpelementation.IRecyclerActivity;
 import mo.ed.aad.mydatabindingimpelementation.R;
 import mo.ed.aad.mydatabindingimpelementation.androidWave.model.Contact;
 import mo.ed.aad.mydatabindingimpelementation.databinding.RowItemBinding;
@@ -16,8 +15,12 @@ import mo.ed.aad.mydatabindingimpelementation.databinding.RowItemBinding;
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
 
+    private final Context mContext;
     List<Contact> mContactList;
 
+    public ContactAdapter(Context context){
+        this.mContext=context;
+    }
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,6 +38,9 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         Contact contact=mContactList.get(position);
         holder.rowItemBinding.setContact(contact);
+
+        // TODO: 5/2/20 implementing a custom interface
+        holder.rowItemBinding.setIRecyclerActivity((IRecyclerActivity)mContext);
     }
 
     @Override
