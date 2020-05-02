@@ -81,7 +81,7 @@ public class Contact {
 
 
     @BindingAdapter({ "avatar" })
-    public static void loadImage(ImageView imageView, String imageURL) {
+    public static void loadImage(ImageView imageView, String imageURL) { // for displaying images on recyclerAdapter
         Glide.with(imageView.getContext())
                 .setDefaultRequestOptions(new RequestOptions()
                         .circleCrop())
