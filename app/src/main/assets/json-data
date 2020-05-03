@@ -6,18 +6,18 @@
   "data": [
     {
       "id": 1,
-      "email": "george.bluth@reqres.in",
-      "userName": "George",
+      "email": "proofesser@gmail.com",
+      "userName": "Mohamed",
       "age": "27",
       "phoneNum":"01097555350",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
     },
     {
       "id": 2,
-      "email": "janet.weaver@reqres.in",
-      "userName": "George",
+      "email": "nohamelmandoh@gmail.com",
+      "userName": "Noha",
       "age": "27",
-      "phoneNum":"01097555350",
+      "phoneNum":"01097441013",
       "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
     },
     {

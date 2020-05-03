@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import mo.ed.aad.mydatabindingimpelementation.ContactViewModel;
 import mo.ed.aad.mydatabindingimpelementation.R;
 import mo.ed.aad.mydatabindingimpelementation.androidWave.model.Contact;
 import mo.ed.aad.mydatabindingimpelementation.databinding.DetailFragmentLayoutBinding;
@@ -33,7 +34,10 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding= DetailFragmentLayoutBinding.inflate(inflater);
-        mBinding.setContact(mContact);
+
+        ContactViewModel contactViewModel=new ContactViewModel();
+        contactViewModel.setContact(mContact);
+        mBinding.setContactView(contactViewModel);
         return mBinding.getRoot();
     }
 }
