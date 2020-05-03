@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.List;
@@ -54,14 +55,10 @@ public class AndroidWaveActivity extends AppCompatActivity implements IRecyclerA
 
     @Override
     public void inflateContactFragment(Contact contact) {
-        DetailFragment detailFragment=new DetailFragment();
-//        Bundle bundle=new Bundle();
-//        bundle.putParcelable(String.valueOf(R.string.detail_intent), contact);
-//        detailFragment.setArguments(bundle);
-
-        FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.Contact_Detail_container, detailFragment,"DetailFragment");
-//        transaction.addToBackStack("DetailFragment");
-        transaction.commit();
+        Intent intent=new Intent();
+        Bundle bundle=new Bundle();
+        bundle.putParcelable(String.valueOf(R.string.detail_intent), contact);
+        intent.putExtra(String.valueOf(R.string.detail_intent), bundle);
+        startActivity(new Intent(getApplicationContext(), DetailActivity.class).putExtras(bundle));
     }
 }

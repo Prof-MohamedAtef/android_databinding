@@ -2,8 +2,13 @@ package mo.ed.aad.mydatabindingimpelementation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import mo.ed.aad.mydatabindingimpelementation.androidWave.DetailActivity;
+import mo.ed.aad.mydatabindingimpelementation.androidWave.model.Contact;
 import mo.ed.aad.mydatabindingimpelementation.databinding.ActivityRecyclerBinding;
 import mo.ed.aad.mydatabindingimpelementation.fragments.RecyclerFragment;
 

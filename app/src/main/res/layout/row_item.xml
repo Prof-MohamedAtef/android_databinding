@@ -14,10 +14,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:onClick="@{() -> iRecyclerActivity.inflateContactFragment(contact)}">
+            android:layout_height="match_parent">
 
             <LinearLayout
+                android:onClick="@{() -> iRecyclerActivity.inflateContactFragment(contact)}"
                 android:id="@+id/Linear_AllPostDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -164,7 +164,7 @@
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="5dp"
                         android:padding="2dp"
-                        android:text="We want to re design our street and make it beautiful, any one has an idea about how to do that please contact me" />
+                        android:text="@{contact.userName + contact.email}" />
 
                     <ImageView
                         android:id="@+id/post_image"

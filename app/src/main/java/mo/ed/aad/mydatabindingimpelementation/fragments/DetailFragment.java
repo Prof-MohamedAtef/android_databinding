@@ -23,17 +23,17 @@ public class DetailFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Bundle bundle=getArguments();
-//        if (bundle!=null){
-//            mContact=bundle.getParcelable(String.valueOf(R.string.detail_intent));
-//        }
+        Bundle bundle=getArguments();
+        if (bundle!=null){
+            mContact=bundle.getParcelable(String.valueOf(R.string.detail_intent));
+        }
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding= DetailFragmentLayoutBinding.inflate(inflater);
-//        mBinding.setContact(mContact);
+        mBinding.setContact(mContact);
         return mBinding.getRoot();
     }
 }
