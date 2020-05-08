@@ -42,7 +42,7 @@ public class ChooseQuantityDialog extends DialogFragment {
             Log.d(TAG, "onItemSelected: selected: " + adapterView.getItemAtPosition(i));
             String selectedValue = (String) adapterView.getItemAtPosition(i);
                 mBinding.getIDetailFragment().setQuantity(Integer.parseInt(selectedValue));
-//            ((QuantityListener)getActivity()).OnQuantityValueChanged(Integer.parseInt(selectedValue));
+//            ((QuantityListener)getActivi  ty()).OnQuantityValueChanged(Integer.parseInt(selectedValue));
 //            ((IDetailFragment) getActivity().getSupportFragmentManager().getFragments().get(0)).setQuantity(Integer.parseInt(selectedValue));
             getDialog().dismiss();
         }

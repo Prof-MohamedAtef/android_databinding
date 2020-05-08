@@ -38,7 +38,7 @@ public class DetailFragment extends Fragment implements IDetailFragment {
             }
 
             @Override
-            public void setQuantity(int quantity) {
+            public void setQuantity (int quantity) {
                 Log.d(TAG, "selectQuantity: selected quantity: "+quantity);
                 DetailFragment fragment=(DetailFragment)getActivity().getSupportFragmentManager().findFragmentByTag("DetailFragment");
                 if (fragment!=null){
