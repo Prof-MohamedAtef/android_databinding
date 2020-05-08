@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.LoginFilter;
+import android.util.Log;
 
 import java.util.List;
 
+import mo.ed.aad.mydatabindingimpelementation.ChooseQuantityDialog;
 import mo.ed.aad.mydatabindingimpelementation.IRecyclerActivity;
 import mo.ed.aad.mydatabindingimpelementation.R;
 import mo.ed.aad.mydatabindingimpelementation.androidWave.adapter.ContactAdapter;
@@ -26,12 +29,12 @@ public class AndroidWaveActivity extends AppCompatActivity implements IRecyclerA
     private ContactViewModel contactViewModel;
     private ContactAdapter contactAdapter;
     ActivityAndroidWaveBinding mBinding;
+    private static final String TAG="AndroidWaveActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding=
-                DataBindingUtil.setContentView(this,R.layout.activity_android_wave);
+        mBinding= DataBindingUtil.setContentView(this,R.layout.activity_android_wave);
 
         // bind recycler view
         RecyclerView recyclerView=mBinding.recyclervViewContacts;

@@ -30,6 +30,13 @@ public class Contact implements Parcelable {
     @SerializedName("avatar")
     private String Avatar;
 
+    public Contact(String userName, String age, String phone, String email){
+        UserName=userName;
+        Age=age;
+        PhoneNum=phone;
+        Email=email;
+    }
+
     protected Contact(Parcel in) {
         ID = in.readString();
         Email = in.readString();

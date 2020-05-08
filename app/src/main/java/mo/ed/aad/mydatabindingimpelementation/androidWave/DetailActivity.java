@@ -1,24 +1,35 @@
 package mo.ed.aad.mydatabindingimpelementation.androidWave;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
+import java.util.List;
+
+import mo.ed.aad.mydatabindingimpelementation.ChooseQuantityDialog;
+import mo.ed.aad.mydatabindingimpelementation.IDetailFragment;
 import mo.ed.aad.mydatabindingimpelementation.IRecyclerActivity;
+import mo.ed.aad.mydatabindingimpelementation.QuantityListener;
 import mo.ed.aad.mydatabindingimpelementation.R;
+import mo.ed.aad.mydatabindingimpelementation.Util.Contacts;
 import mo.ed.aad.mydatabindingimpelementation.androidWave.model.Contact;
 import mo.ed.aad.mydatabindingimpelementation.databinding.ActivityDetailBinding;
 import mo.ed.aad.mydatabindingimpelementation.fragments.DetailFragment;
 
-public class DetailActivity extends AppCompatActivity {//implements IRecyclerActivity {
+public class DetailActivity extends AppCompatActivity implements QuantityListener {
 
     ActivityDetailBinding mBinding;
-    private Parcelable mContact;
+    private Contact mContact;
+    private static final String TAG="DetailActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +44,6 @@ public class DetailActivity extends AppCompatActivity {//implements IRecyclerAct
                inflateDetailFragment();
             }
         }
-
-
     }
 
     private void inflateDetailFragment() {
@@ -48,8 +57,16 @@ public class DetailActivity extends AppCompatActivity {//implements IRecyclerAct
         transaction.commit();
     }
 
-//    @Override
-//    public void inflateContactFragment(Contact contact) {
-
-//    }
+    @Override
+    public void OnQuantityValueChanged(int quantity) {
+//        String text=mBinding.toolbarTextView.getText().toString();
+//        if (text!=null&&text.length()>0){
+//            int q= Integer.valueOf( mBinding.toolbarTextView.getText().toString());
+//            quantity+=q;
+//            mBinding.toolbarTextView.setText(quantity);
+//        }else {
+//            int q= Integer.valueOf( mBinding.toolbarTextView.getText().toString());
+//            mBinding.toolbarTextView.setText(quantity);
+//        }
+    }
 }

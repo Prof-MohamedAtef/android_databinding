@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">MYDataBindingImpelementation</string>
     <string name="detail_intent">Detail_intent</string>
+
+    <string name="dialog_quantity_title">Qty: </string>
+    <string name="cart_subtotal">Cart subtotal</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="hey_profile">my Profile</string>
+    <string name="add_family_member">Add Member</string>
+    <string name="click_here_to_add_family_members">Click Me</string>
+    <string name="add_another_member">add another member</string>
+    <string name="add_payment_method">add payment method</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="add_another_payment_methods">Add another</string>
+    <string name="Apple_pay">pple Pay</string>
 </resources>
